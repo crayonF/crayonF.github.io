@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      position: relative;
+    }
+
+    .body {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #170940;
+      background-image: linear-gradient(0deg, #24004a 40%, #170940 70%, #000955 100%);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    .body::before {
+      content: "";
+      position: absolute;
+      bottom: -24px;
+      width: 66%;
+      height: 49px;
+      background: #fff;
+      right: 0;
+      border-radius: 50%/50% 0 0;
+    }
+    .body::after {
+      content: "";
+      position: absolute;
+      bottom: -27px;
+      left: -170px;
+      width: 50%;
+      height: 49px;
+      background: #ededed;
+      border-radius: 50%/50%;
+      box-shadow: 800px 4px 0 #fff;
+    }
+
+    .snow {
+      position: absolute;
+      top: -10%;
+      right: 0;
+      left: 0;
+      user-select: none;
+      opacity: 0.3;
+    }
+    .snow ul {
+      margin: 0;
+      list-style: none;
+    }
+    .snow ul:first-child {
+      opacity: 0.8;
+      filter: brightness(1.5) hue-rotate(212deg);
+      font-size: 70px;
+    }
+    .snow ul:first-child li:nth-child(3n+1) {
+      font-size: 100px;
+    }
+    .snow ul.round {
+      position: relative;
+      left: 20%;
+      font-size: 0;
+    }
+    .snow ul.round li {
+      width: 20px;
+      height: 20px;
+      filter: blur(15px);
+      background: #fff;
+    }
+    .snow ul.round:nth-child(1) {
+      right: 40%;
+      top: -30%;
+    }
+    .snow ul.round:nth-child(2) {
+      left: 20%;
+      top: -30%;
+    }
+    .snow ul.round:nth-child(3) {
+      left: 20%;
+      top: -10%;
+    }
+    .snow li {
+      position: absolute;
+      top: -30px;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    .snow li:nth-child(even) {
+      opacity: 0.8;
+      filter: blur(5px);
+    }
+    .snow li:nth-child(1) {
+      left: 20%;
+      animation-name: snow-1;
+      animation-duration: 19s;
+      animation-delay: 5s;
+    }
+    .snow li:nth-child(2) {
+      left: 30%;
+      animation-name: snow-2;
+      animation-duration: 21s;
+      animation-delay: -2s;
+    }
+    .snow li:nth-child(3) {
+      left: 40%;
+      animation-name: snow-3;
+      animation-duration: 19s;
+      animation-delay: 1s;
+    }
+    .snow li:nth-child(4) {
+      left: 70%;
+      animation-name: snow-1;
+      animation-duration: 13s;
+      animation-delay: 6.5s;
+    }
+    .snow li:nth-child(5) {
+      left: 20%;
+      animation-name: snow-2;
+      animation-duration: 16s;
+      animation-delay: 1.2s;
+    }
+    .snow li:nth-child(6) {
+      left: 10%;
+      animation-name: snow-3;
+      animation-duration: 17s;
+      animation-delay: 8s;
+    }
+
+    @keyframes snow-1 {
+      60% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.1;
+        transform: translate(300px, 110vh) rotate(800deg);
+      }
+    }
+    @keyframes snow-2 {
+      60% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.1;
+        transform: translate(-300px, 110vh) rotate(300deg);
+      }
+    }
+    @keyframes snow-3 {
+      60% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.1;
+        transform: translate(600px, 110vh) rotate(-500deg);
+      }
+    }
+    .tree {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      filter: drop-shadow(0px 0px 60px rgba(208, 127, 0, 0.6));
+    }
+    .tree ul {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      list-style: none;
+    }
+    .tree li {
+      position: relative;
+      z-index: 2;
+    }
+    .tree li:after {
+      content: "✨";
+      position: absolute;
+      font-size: 0.1em;
+      top: 42%;
+      left: 54%;
+    }
+    .tree li:last-child {
+      position: absolute;
+      font-size: 270px !important;
+      left: 39%;
+      bottom: 0;
+      text-align: center;
+      z-index: 1;
+    }
+    .tree li:last-child:after {
+      top: 42% !important;
+      left: 54% !important;
+      filter: hue-rotate(98deg);
+    }
+    .tree li:nth-child(3n+3):after {
+      font-size: 0.2em;
+      top: 2%;
+    }
+    .tree li:nth-child(2n+2) {
+      margin-left: -0.5em;
+    }
+    .tree li:nth-child(2n+3) {
+      margin-left: -0.3em;
+    }
+    .tree li:nth-child(2n+3):after {
+      top: 49%;
+    }
+    .tree li:nth-child(2n+3):after {
+      content: "⭐";
+    }
+
+    .top {
+      filter: blur(5px);
+    }
+    .top .line {
+      position: absolute;
+      top: -380px;
+      left: 50%;
+      width: 2164px;
+      height: 530px;
+      transform: translateX(-50%);
+      border: 1px solid yellow;
+      border-radius: 120%;
+      filter: drop-shadow(1342px 4px 6px yellow) drop-shadow(-1342px 4px 6px yellow);
+    }
+    .top ul {
+      list-style: none;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .top ul li {
+      margin-left: -32px;
+      transform: rotate(180deg);
+      position: relative;
+    }
+    .top ul li:nth-child(6), .top ul li:nth-child(10) {
+      margin-bottom: 8px;
+    }
+    .top ul li:nth-child(5), .top ul li:nth-child(11) {
+      margin-bottom: 22px;
+    }
+    .top ul li:nth-child(4), .top ul li:nth-child(12) {
+      margin-bottom: 45px;
+    }
+    .top ul li:nth-child(3), .top ul li:nth-child(13) {
+      margin-bottom: 73px;
+    }
+    .top ul li:nth-child(2), .top ul li:nth-child(14) {
+      margin-bottom: 121px;
+    }
+    .top ul li:nth-child(1), .top ul li:nth-child(15) {
+      margin-bottom: 162px;
+    }
+
+    .sky ul {
+      list-style: none;
+    }
+    .sky li {
+      opacity: 0.1;
+      filter: blur(3px);
+      position: absolute;
+    }
+    .sky li:nth-child(1) {
+      opacity: 1;
+      font-size: 100px;
+      bottom: 200px;
+      left: 50%;
+      transform: translate(-681px);
+      filter: drop-shadow(0px 0px 60px rgba(208, 127, 0, 0.6));
+    }
+    .sky li:nth-child(2) {
+      font-size: 30px;
+      bottom: 800px;
+      left: 40%;
+    }
+    .sky li:nth-child(3) {
+      font-size: 40px;
+      bottom: 500px;
+      left: 20%;
+    }
+    .sky li:nth-child(4) {
+      font-size: 40px;
+      bottom: 600px;
+      left: 55%;
+    }
+    .sky li:nth-child(5) {
+      font-size: 30px;
+      bottom: 500px;
+      right: 10%;
+    }
+    .sky li:nth-child(6) {
+      font-size: 50px;
+      bottom: 800px;
+      right: 3%;
+    }
+
+    .main {
+      /* display: flex; */
+      display: none;
+      align-items: flex-start;
+      position: relative;
+      margin: 200px auto 0;
+      width: 100%;
+      max-width: 1440px;
+      box-sizing: border-box;
+      padding: 50px 50px 66px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.79);
+      transition: transform 0.5s linear;
+    }
+    .is-end .main {
+      transform: scale(0);
+    }
+    .main .santa-wrap {
+      position: relative;
+      opacity: 0;
+      animation-name: show;
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+    }
+    .main .santa {
+      font-size: 150px;
+    }
+    .main .face {
+      position: absolute;
+      top: 0;
+      font-size: 120px;
+      left: 25px;
+    }
+    .main .chat {
+      background: #fff;
+      border-radius: 70px;
+      padding: 50px;
+      font-size: 40px;
+      opacity: 0;
+      animation-name: show;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+      animation-duration: 1s;
+    }
+
+    .deer {
+      display: none;
+      font-size: 200px;
+      position: absolute;
+      transform: rotate(19deg);
+      right: -20%;
+      bottom: -10%;
+      transition: right 0.2s linear, bottom 0.2s linear;
+    }
+    .is-end .deer {
+      transform: scale(0);
+      transition: transform 0.5s linear;
+    }
+    .deer::before {
+      content: "🛷";
+      position: absolute;
+      left: 100%;
+      margin-left: -0.3em;
+    }
+    .deer .gift {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      font-size: 0.6em;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s;
+      animation: scale;
+      animation-duration: 0.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    .deer .gift:hover {
+      transform: scale(1.1);
+    }
+    .deer.is-active {
+      right: 26%;
+      bottom: 51%;
+    }
+
+    @keyframes show {
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes scale {
+      0% {
+        transform: scale(1);
+      }
+      45% {
+        transform: scale(1.1);
+      }
+      65% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .popup {
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .popup.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .popup-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      padding: 40px;
+      background: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+    }
+    .popup-magic {
+      font-size: 100px;
+    }
+    .popup-text {
+      margin: 30px 0;
+      font-style: italic;
+    }
+    .popup-slot {
+      overflow: hidden;
+      display: flex;
+      justify-content: space-evenly;
+      height: 160px;
+      border: 10px solid #f0f0f0;
+    }
+    .popup-slot .slot {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 50px;
+    }
+    .popup-slot .swiper-slide {
+      height: 84px;
+      display: flex;
+      align-items: center;
+    }
+    .popup-slot .swiper-slide span {
+      display: block;
+      margin-top: -13px;
+    }
+    .popup-result {
+      margin-top: 30px;
+    }
+    .popup-cta {
+      margin-top: 30px;
+    }
+    .popup-cta button {
+      border: 0;
+      background: #bc0c0c;
+      padding: 20px 70px;
+      color: #fff;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: none">🧝‍🤷‍♂️🧝‍♀️🎄👪🦌🎅🌨️🎉❄️🔔✨🎇🔮💡🍪🌕🔅⭐🌟🌠</div>
+  <div class="body">
+    <div class="snow">
+      <ul>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+      </ul>
+      <ul class="round">
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+      </ul>
+      <ul class="round">
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+      </ul>
+      <ul class="round">
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+        <li>❄️</li>
+      </ul>
+    </div>
+    <div class="tree">
+      <ul>
+        <li>🎄</li>
+        <li>🎄</li>
+        <li>🎄</li>
+        <li>🎄</li>
+        <li>🎄</li>
+      </ul>
+    </div>
+    <div class="top">
+      <div class="line">
+        <ul>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+          <li>💡</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sky">
+      <ul>
+        <li>🌕</li>
+        <li>🌟</li>
+        <li>🌟</li>
+        <li>🌟</li>
+        <li>🌟</li>
+        <li>🌠</li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="santa-wrap">
+        <div class="santa">🙋‍♂</div>
+        <span class="face">🎅</span>
+      </div>
+      <div class="chat"> </div>
+    </div>
+    <div class="deer">🦌<button type="button" class="gift">🎁</button></div>
+    <div class="popup">
+      <div class="popup-box">
+        <div class="popup-magic">🧚</div>
+        <div class="popup-text">
+          내년 당신은..
+        </div>
+        <div class="popup-slot">
+          <div class="swiper slot slot1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><span>🎄</span></div>
+              <div class="swiper-slide"><span>🎅</span></div>
+              <div class="swiper-slide"><span>❄️</span></div>
+              <div class="swiper-slide"><span>🦌</span></div>
+              <div class="swiper-slide"><span>🎇</span></div>
+              <div class="swiper-slide"><span>💩</span></div>
+            </div>
+          </div>
+          <div class="swiper slot slot2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><span>🎅</span></div>
+              <div class="swiper-slide"><span>🦌</span></div>
+              <div class="swiper-slide"><span>🎄</span></div>
+              <div class="swiper-slide"><span>❄️</span></div>
+              <div class="swiper-slide"><span>💩</span></div>
+              <div class="swiper-slide"><span>🎇</span></div>
+            </div>
+          </div>
+          <div class="swiper slot slot3">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><span>🦌</span></div>
+              <div class="swiper-slide"><span>🎄</span></div>
+              <div class="swiper-slide"><span>❄️</span></div>
+              <div class="swiper-slide"><span>💩</span></div>
+              <div class="swiper-slide"><span>🎅</span></div>
+              <div class="swiper-slide"><span>🎇</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-result">과연..?</div>
+        <div  class="popup-cta"><button>받기</button></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.3.3/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.0.7/dist/index.umd.js"></script>
+  <script>
+    const body = document.querySelector('body');
+    const chat = document.querySelector('.chat');
+    const santa = document.querySelector('.santa');
+    const face = document.querySelector('.face');
+    const deer = document.querySelector('.deer');
+    const gift = document.querySelector('.gift');
+    const popup = document.querySelector('.popup');
+    const result = document.querySelector('.popup-result');
+    const popupCta = document.querySelector('.popup-cta');
+    let slot1, slot2, slot3;
+
+    const talk = () => {
+      setTimeout(() => {
+        new TypeIt(chat, {
+          speed: 50,
+          waitUntilVisible: true,
+        }).type('하이').go();
+      }, 2000);
+
+
+      setTimeout(() => {
+        chat.textContent = '';
+        new TypeIt(chat, {
+          speed: 50,
+          waitUntilVisible: true,
+        }).type('나는 산타야').go();
+      }, 4000);
+
+      setTimeout(() => {
+        chat.textContent = '';
+        new TypeIt(chat, {
+          speed: 50,
+          waitUntilVisible: true,
+        }).type('🔔메리 크리스마스🔔').go();
+      }, 6000);
+
+      setTimeout(() => {
+        chat.textContent = '';
+        new TypeIt(chat, {
+          speed: 50,
+          waitUntilVisible: true,
+        }).type('근데 내가 왜 왔냐고?').go();
+        santa.textContent = '🤷‍♂️';
+      }, 8000);
+
+      setTimeout(() => {
+        chat.textContent = '';
+        new TypeIt(chat, {
+          speed: 50,
+          waitUntilVisible: true,
+        }).type('선물주러왔어').go();
+        santa.textContent = '💁‍♂️';
+        face.style.left = '10px';
+      }, 10000);
+
+
+      setTimeout(() => {
+        chat.textContent = '';
+        new TypeIt(chat, {
+          speed: 50,
+          waitUntilVisible: true,
+        }).type('돌프야 콤히얼').go();
+        santa.textContent = '🙋‍♂️';
+        face.style.left = '';
+      }, 12000);
+
+      setTimeout(() => {
+        deer.classList.add('is-active');
+      }, 14000);
+    }
+
+    const openGift = () => {
+      gift.textContent = '';
+      popup.classList.add('is-active');
+      slot();
+    };
+
+    const slot = () => {
+      function randomNum(min, max){ var randNum = Math.floor(Math.random()*(max-min+1)) + min; return randNum; }
+      const time = randomNum(2000, 4000);
+      
+      setTimeout(() => {
+        slot1.autoplay.stop();
+        setTimeout(() => {
+          slot2.autoplay.stop();
+        }, 500);
+        setTimeout(() => {
+          slot3.autoplay.stop();
+          setTimeout(() => {
+            popupCta.addEventListener('click', closeGift);
+            const s1 = document.querySelector('.slot1 .swiper-slide-active').textContent;
+            const s2 = document.querySelector('.slot2 .swiper-slide-active').textContent;
+            const s3 = document.querySelector('.slot3 .swiper-slide-active').textContent;
+            if(s1 === s2 && s2 === s3) {
+              result.textContent = '로또 당첨될지도..?'
+            } else if (s1 === s2 || s1 === s3 || s2 === s3) { 
+              result.textContent = '돈을 많이 벌게 됩니다.'
+            }else {
+              result.textContent = '행복한 2022년 되세요'
+            }
+          }, 1000)
+        }, 800);
+      }, time);
+    }
+
+    const closeGift = () => {
+      popup.classList.remove('is-active');
+      lastTalk();
+    };
+
+    const lastTalk = () => {
+      gift.textContent = '';
+      setTimeout(() => {
+        chat.textContent = '';
+        new TypeIt(chat, {
+          speed: 50,
+          waitUntilVisible: true,
+        }).type('그럼 한해동안 고생했고').go();
+        santa.textContent = '🙆‍♂️';
+      }, 1000);
+      setTimeout(() => {
+        chat.textContent = '';
+        new TypeIt(chat, {
+          speed: 50,
+          waitUntilVisible: true,
+        }).type('행쇼!').go();
+        santa.textContent = '🙋‍♂️';
+      }, 3000);
+      
+      setTimeout(() => {
+        body.classList.add('is-end');
+      }, 5000);
+    };
+
+    talk();
+    gift.addEventListener('click', openGift);
+
+    slot1 = new Swiper(".slot1", {
+      direction: "vertical",
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+    });
+    setTimeout(() => {
+      slot2 = new Swiper(".slot2", {
+        direction: "vertical",
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+      });
+    }, 500);
+    setTimeout(() => {
+      slot3 = new Swiper(".slot3", {
+        direction: "vertical",
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+      });
+    }, 1000);
+  </script>
+</body>
+</html>
