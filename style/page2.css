@@ -1,0 +1,58 @@
+svg {
+  visibility: hidden;
+  position: absolute;
+}
+
+.content-box {
+  position: relative;
+}
+.stars, .moon {
+  transform: scale(0.31);
+  transition: all 1s;
+}
+.text {
+  transform: scale(0.31) translateY(50%);
+}
+.GroundBack, .GroundFront, .TreeGroup1, .TreeGroup2, .snowman {
+  transform: scale(0.31) translateY(220%);
+}
+#snow_bottom,
+#left_arm,
+#right_arm,
+#scarf,
+#ears,
+#moon,
+#nose {
+  opacity: 0;
+}
+g#stars > polygon,
+g#snowman > path,
+g#snowman > polygon,
+g#snowman > circle,
+g#snowman > ellipse {
+  opacity: 0;
+}
+#bottom_buttons > path {
+  opacity: 0;
+}
+#face > path,
+#face > ellipse {
+  opacity: 0;
+}
+g#TreeGroup1 > path,
+g#TreeGroup1 > polygon,
+g#TreeGroup1 > g > path,
+g#TreeGroup1 > g > polygon {
+  opacity: 0;
+}
+g#TreeGroup2 > path,
+g#TreeGroup2 > polygon {
+  opacity: 0;
+}
+g#text > path,
+g#text > g > path {
+  opacity: 0;
+}
+g#T > path {
+  opacity: 0;
+}

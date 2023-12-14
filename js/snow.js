@@ -68,12 +68,12 @@ class Particle {
 class Animator {
   constructor(options) {
     this.options = Object.assign({
-        emit: 1,
+        emit: 2,
         maxParticles: 500,
-        speed: 1,
-        width: 400,
-        height: 400,
-        size: 5,
+        speed: 3,
+        width: 500,
+        height: 1000,
+        size: 8,
         ghostTrails: false
     }, options);
     this.el = this.options.el;
