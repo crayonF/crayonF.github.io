@@ -304,13 +304,13 @@ p {
 
 .click-icon {
   position: absolute;
-  left: 50%;
+  left: 45%;
   -webkit-transform: translate(-50%, 0);
   -moz-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
-  bottom: 20px;
+  bottom: 20%;
   -webkit-animation: iconAnimation 1s infinite alternate ease-in-out;
   -moz-animation: iconAnimation 1s infinite alternate ease-in-out;
   animation: iconAnimation 1s infinite alternate ease-in-out;
