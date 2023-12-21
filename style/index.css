@@ -11,7 +11,7 @@ body {
   height: 100%;
   overflow: hidden;
   position: absolute;
-  transition: all 2s;
+  transition: all 1.5s;
 }
 .page1 {
   background-image: #121a2d;
@@ -22,29 +22,40 @@ body {
   z-index: 100;
 }
 .page1-hidden {
-  transform: translateX(500px);
+  transform: translateX(430px);
   opacity: 0;
   width: 0px;
 }
 .page2 {
-  z-index: 99;
+  z-index: 98;
 }
 .page2-hidden {
-  transform: translateX(-500px);
+  transform: translateX(-430px);
   opacity: 0;
   width: 0px;
 }
 .page3 {
-  z-index: 98;
+  z-index: 99;
 }
 
 #bodymovin {
-  background-color: #121a2d;
-  width: 100%;
-  height: 100vh;
+  width: 200px;
+  height: 200px;
   display: block;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
   text-align: center;
   opacity: 1;
+  position: fixed;
+  top: -8%;
+  left: -100%;
+  transition: all 2s;
+  z-index: 11111111;
+}
+.bodymovin-open {
+  left: -12% !important;
+}
+
+#bodymovin svg {
+  left: 0;
 }

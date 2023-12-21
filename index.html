@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./style/page2.css">
     <link rel="stylesheet" type="text/css" href="./style/page3.css">
     <link rel="stylesheet" type="text/css" href="./style/album.css">
+    <link rel="stylesheet" type="text/css" href="./style/button.css">
     <script src="./assets/jquery.js"></script>
     <script src="./assets/jquery.mousewheel.js"></script>
     <script src="./assets/MorphSVGPlugin.js"></script>
@@ -18,10 +19,12 @@
   </head>
 
   <body>
+    <a href="#" class="christmas-button">🎅</a>
+    <div id="bodymovin"></div>
+    <audio id="myAudio" src="./assets/mp3/bestforyou.mp3"></audio>
     <!-- 网页鼠标点击特效（爱心） -->
     <div class="page page1">
-      <canvas id="canvas"></canvas>
-      <div id="bodymovin"></div>
+      <canvas id="canvas" style="position: relative;"></canvas>
       <div class="card">
         <div class="card-page cart-page-front">
           <div class="card-page cart-page-outside"></div>
@@ -901,13 +904,12 @@
       </div>
     </div>
 
+    <script src="./js//cuteKaTong.js"></script>
     <script src="./js/page2.js"></script>
     <script src="./js/page3.js"></script>
     <script src="./js/album.js"></script>
     <script src="./js/loveClick.js"></script>
-    <!-- <script src="./cuteKaTong.js"></script> -->
     <script src="./js/snow.js"></script>
     <script src="./js/card.js"></script>
-    <!-- <script src="./album.js"></script> -->
   </body>
 </html>

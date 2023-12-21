@@ -22743,19 +22743,4 @@ var params = {
   animationData: animationData,
 };
 
-var anim;
 
-anim = bodymovin.loadAnimation(params);
-console.log(anim);
-console.log(bodymovin);
-
-// setInterval(() => {
-// //   anim.autoplay = true;
-// //   console.log("111");
-// }, 2000);
-
-// setInterval(() => {
-//     anim.togglePause()
-// //   anim.autoplay = true;
-// //   console.log("111");
-// }, 3000);
