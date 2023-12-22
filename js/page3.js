@@ -15,7 +15,7 @@
         new TypeIt(chat, {
           speed: 50,
           waitUntilVisible: true,
-        }).type('하이').go();
+        }).type('11').go();
       }, 2000);
 
 
@@ -24,7 +24,7 @@
         new TypeIt(chat, {
           speed: 50,
           waitUntilVisible: true,
-        }).type('나는 산타야').go();
+        }).type('22').go();
       }, 4000);
 
       setTimeout(() => {
@@ -32,7 +32,7 @@
         new TypeIt(chat, {
           speed: 50,
           waitUntilVisible: true,
-        }).type('🔔메리 크리스마스🔔').go();
+        }).type('🔔33🔔').go();
       }, 6000);
 
       setTimeout(() => {
@@ -40,7 +40,7 @@
         new TypeIt(chat, {
           speed: 50,
           waitUntilVisible: true,
-        }).type('근데 내가 왜 왔냐고?').go();
+        }).type('44?').go();
         santa.textContent = '🤷‍♂️';
       }, 8000);
 
@@ -49,7 +49,7 @@
         new TypeIt(chat, {
           speed: 50,
           waitUntilVisible: true,
-        }).type('선물주러왔어').go();
+        }).type('55').go();
         // santa.textContent = '💁‍♂️';
         // snowFace.style.left = '10px';
       }, 10000);
@@ -60,7 +60,7 @@
         new TypeIt(chat, {
           speed: 50,
           waitUntilVisible: true,
-        }).type('돌프야 콤히얼').go();
+        }).type('66').go();
         santa.textContent = '🙋‍♂️';
         snowFace.style.left = '';
       }, 12000);
@@ -93,11 +93,11 @@
             const s2 = document.querySelector('.slot2 .swiper-slide-active').textContent;
             const s3 = document.querySelector('.slot3 .swiper-slide-active').textContent;
             if(s1 === s2 && s2 === s3) {
-              popupResult.textContent = '로또 당첨될지도..?'
+              popupResult.textContent = '77?'
             } else if (s1 === s2 || s1 === s3 || s2 === s3) { 
-              popupResult.textContent = '돈을 많이 벌게 됩니다.'
+              popupResult.textContent = '88.'
             }else {
-              popupResult.textContent = '행복한 2022년 되세요'
+              popupResult.textContent = '999'
             }
           }, 1000)
         }, 800);
@@ -116,7 +116,7 @@
         new TypeIt(chat, {
           speed: 50,
           waitUntilVisible: true,
-        }).type('그럼 한해동안 고생했고').go();
+        }).type('aaaa').go();
         santa.textContent = '🙆‍♂️';
       }, 1000);
       setTimeout(() => {
@@ -124,7 +124,7 @@
         new TypeIt(chat, {
           speed: 50,
           waitUntilVisible: true,
-        }).type('행쇼!').go();
+        }).type('bbbb!').go();
         santa.textContent = '🙋‍♂️';
       }, 3000);
       

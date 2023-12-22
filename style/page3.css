@@ -177,7 +177,7 @@
     .tree li:nth-child(2) {
       position: absolute;
       font-size: 230px !important;
-      left: 32%;
+      left: 37%;
       bottom: 0;
       text-align: center;
       z-index: 1;
@@ -193,7 +193,7 @@
     .tree li:last-child {
       position: absolute;
       font-size: 172px !important;
-      left: 14%;
+      left: 16%;
       bottom: 128%;
       text-align: center;
       z-index: 0;
@@ -426,10 +426,10 @@
     }
     .popup-box {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 0;
+      left: 0;
       transform: translate(-50%, -50%);
-      width: 500px;
+      width: 100%;
       padding: 40px;
       background: #fff;
       border-radius: 50px;

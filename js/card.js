@@ -11,7 +11,7 @@ elemCard.addEventListener('click', function() {
   elemCard.classList.toggle('is-opened');
   elemClickIcon.classList.toggle('is-hidden');
   nextButton.classList.toggle('button-open')
-  console.log(elemBodymovin)
+  nextButton.addEventListener('click', btnClick, false)
   if (typeof katongAnim === 'undefined') {
     window.katongAnim = bodymovin.loadAnimation(params);
     elemBodymovin.classList.toggle('bodymovin-open');
@@ -30,12 +30,12 @@ elemCard.addEventListener('click', function() {
   }
 });
 
-function btnClick() {
+function btnClick(event) {
   page1.classList.toggle('page1-hidden')
   nextButton.classList.toggle('button-open')
   nextButton.removeEventListener('click', btnClick, false)
 }
-nextButton.addEventListener('click', btnClick, false)
+
 
 // setTimeout(() => {
 //   page1.classList.toggle('page1-hidden')

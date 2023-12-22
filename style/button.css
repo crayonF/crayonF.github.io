@@ -31,7 +31,7 @@
   bottom: 10%;
   left: 50%;
   transform: translateX(-45px);
-  z-index: 111111;
+  z-index: -1;
 	overflow: visible; /* IE9 & 10 */
   animation: changeImg 3s ease 0s;
   animation-iteration-count:infinite;
@@ -43,6 +43,7 @@
 
 .button-open {
   opacity: 1;
+  z-index: 1111111;
 }
 
 
