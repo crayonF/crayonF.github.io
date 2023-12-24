@@ -48,8 +48,6 @@ function btnClick() {
 
 const dateNum = document.querySelector('#date-num')
 dateNum.textContent = Math.floor((new Date() - new Date('2023/8/14')) / 24 / 60 / 60 / 1000) + '天'
-dateNum1.textContent = new Date().getTime() + '天'
-dateNum2.textContent = new Date() + '天'
 
 
 function inPage2() {

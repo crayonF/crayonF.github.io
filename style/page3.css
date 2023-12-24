@@ -312,10 +312,10 @@
       align-items: center;
       position: relative;
       margin: 26% auto 0;
-      width: 100%;
+      width: 90%;
       box-sizing: border-box;
       /* padding: 50px 50px 66px; */
-      border-radius: 50px;
+      border-radius: 14px;
       background: rgba(255, 255, 255, 0.79);
       transition: transform 0.5s linear;
     }
