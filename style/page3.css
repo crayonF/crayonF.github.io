@@ -177,7 +177,7 @@
     .tree li:nth-child(2) {
       position: absolute;
       font-size: 230px !important;
-      left: 37%;
+      right: -12%;
       bottom: 0;
       text-align: center;
       z-index: 1;
@@ -311,7 +311,7 @@
       display: flex;
       align-items: center;
       position: relative;
-      margin: 200px auto 0;
+      margin: 26% auto 0;
       width: 100%;
       box-sizing: border-box;
       /* padding: 50px 50px 66px; */
@@ -386,8 +386,9 @@
       transform: scale(1.1);
     }
     .deer.is-active {
-      right: 50%;
-      bottom: 46%;
+      right: 76%;
+      top: 15%;
+      z-index: 11;
     }
 
     @keyframes show {
@@ -423,6 +424,7 @@
     .popup.is-active {
       opacity: 1;
       pointer-events: auto;
+      z-index: 111111111;
     }
     .popup-box {
       position: absolute;
