@@ -32,6 +32,7 @@ elemCard.addEventListener('click', function() {
 });
 // page1.classList.toggle('page1-hidden')
 // page3.classList.toggle('page2-hidden')
+// inPage2()
 function btnClick() {
   if (currentPage === 1) {
     page1.classList.toggle('page1-hidden')
@@ -220,4 +221,36 @@ masterTl
 masterTl.play();
 masterTl.timeScale(1);
 
+setTimeout(() => {
+  (function() {
+    var app;
+  
+    app = {
+      text: "圣诞快乐，宝宝🎄  非常幸运能够遇见你，希望未来的每个圣诞节都是我和你。 爱你 💗",
+      index: 0,
+      chars: 0,
+      speed: 140,
+      container: ".last-content",
+      init: function() {
+        this.chars = this.text.length;
+        return this.write();
+      },
+      write: function() {
+        $(this.container).append(this.text[this.index]);
+        if (this.index < this.chars) {
+          this.index++;
+          return window.setTimeout(function() {
+            return app.write();
+          }, this.speed);
+        }
+      }
+    };
+    app.init()
+  })(this);
+}, 10000)
+
+
+
 }
+
+

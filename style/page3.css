@@ -334,13 +334,14 @@
     }
     .main .face {
       position: absolute;
-      top: 0px;
+      top: 4px;
       font-size: 34px;
       left: 8px;
     }
     .main .chat {
       background: #fff;
       border-radius: 16px;
+      width: 83%;
       padding: 6px;
       font-size: 24px;
       opacity: 0;

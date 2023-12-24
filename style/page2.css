@@ -14,7 +14,7 @@
   transform: scale(0.31) translateY(50%);
 }
 .GroundBack, .GroundFront, .TreeGroup1, .TreeGroup2, .snowman {
-  transform: scale(0.31) translateY(220%);
+  transform: scale(0.31) translateY(180%);
 }
 #snow_bottom,
 #left_arm,
@@ -55,4 +55,43 @@ g#text > g > path {
 }
 g#T > path {
   opacity: 0;
+}
+
+
+.last-text {
+  width: 90%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto;
+  z-index: 111111;
+  color: #fefefe;
+  margin: 0 auto;
+}
+.last-text .last-content {
+  display: inline;
+}
+.last-text .dash {
+  display: inline-block;
+  height: 3px;
+  width: 20px;
+  background-color: #3498db;
+  animation: blink 0.5s infinite linear;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
