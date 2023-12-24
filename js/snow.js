@@ -70,7 +70,7 @@ class Animator {
     this.options = Object.assign({
         emit: 2,
         maxParticles: 500,
-        speed: 3,
+        speed: 5,
         width: 500,
         height: 1000,
         size: 8,

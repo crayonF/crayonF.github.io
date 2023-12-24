@@ -14,7 +14,7 @@
   transform: scale(0.31) translateY(50%);
 }
 .GroundBack, .GroundFront, .TreeGroup1, .TreeGroup2, .snowman {
-  transform: scale(0.31) translateY(180%);
+  transform: scale(0.31) translateY(170%);
 }
 #snow_bottom,
 #left_arm,
@@ -65,7 +65,7 @@ g#T > path {
   line-height: 50px;
   font-size: 30px;
   position: absolute;
-  top: 33%;
+  top: 34%;
   left: 50%;
   transform: translateX(-50%);
   margin: auto;
