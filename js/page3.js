@@ -36,6 +36,7 @@
         }).type('我是你们的圣诞老人爷爷~').go();
         santa.textContent = '💁‍♂️';
         snowFace.style.left = '1px';
+        snowFace.style.top = '0px';
       }, 6000);
 
       setTimeout(() => {
@@ -47,6 +48,7 @@
         // santa.textContent = '🤷‍♂️';
         santa.textContent = '🙋‍♂️';
         snowFace.style.left = '';
+        snowFace.style.top = '';
       }, 9000);
 
       setTimeout(() => {
