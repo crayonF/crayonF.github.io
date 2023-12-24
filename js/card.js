@@ -47,7 +47,11 @@ function btnClick() {
 }
 
 const dateNum = document.querySelector('#date-num')
-dateNum.textContent = Math.floor((new Date() - new Date('2023-8-14')) / 24 / 60 / 60 / 1000) + '天'
+const dateNum1 = document.querySelector('#date-num1')
+const dateNum2 = document.querySelector('#date-num2')
+dateNum.textContent = Math.floor((new Date().getTime() - new Date('2023-8-14').getTime()) / 24 / 60 / 60 / 1000) + '天'
+dateNum1.textContent = (new Date() - new Date('2023-8-14')) / 24 / 60 / 60 / 1000 + '天'
+dateNum2.textContent = new Date('2023-8-14') + '天'
 
 
 function inPage2() {
