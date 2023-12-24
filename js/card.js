@@ -47,9 +47,7 @@ function btnClick() {
 }
 
 const dateNum = document.querySelector('#date-num')
-
-const time = Math.floor((new Date().getTime() - new Date('2023-8-14').getTime()) / 24 / 60 / 60 / 1000)
-dateNum.textContent = time + '天'
+dateNum.textContent = Math.floor((new Date() - new Date('2023/8/14')) / 24 / 60 / 60 / 1000) + '天'
 dateNum1.textContent = new Date().getTime() + '天'
 dateNum2.textContent = new Date() + '天'
 
